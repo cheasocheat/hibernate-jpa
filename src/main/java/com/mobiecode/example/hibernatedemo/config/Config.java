@@ -31,7 +31,7 @@ public class Config {
     private Environment env;
 
     @Bean(name = "mobieDataSource")
-    public DataSource dataSource() {
+    public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("db.driver"));
         dataSource.setUrl(env.getProperty("db.dburl") + "://" + env.getProperty("db.server") + ":" + env.getProperty("db.port") + "/" + env.getProperty("db.database"));
@@ -64,10 +64,10 @@ public class Config {
         return transactionManager;
     }
 
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
+//    @Bean
+//    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+//        return new PersistenceExceptionTranslationPostProcessor();
+//    }
 
     @Bean
     public HibernateJpaSessionFactoryBean sessionFactory() {

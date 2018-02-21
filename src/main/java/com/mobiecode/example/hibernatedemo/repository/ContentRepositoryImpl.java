@@ -46,6 +46,7 @@ public class ContentRepositoryImpl implements ContentRepository {
 //        sessionFactory.openSession().getTransaction().commit();
 
 //        return id > 0 ? true : false;
+        return null;
     }
 
     @Override

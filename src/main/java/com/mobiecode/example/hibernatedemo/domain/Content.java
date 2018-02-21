@@ -24,7 +24,7 @@ public class Content extends BaseEntity {
         return id;
     }
 
-    @Column(name = "con_title")
+    @Column(name = "con_title", nullable = false, length = 255)
     public String getTitle() {
         return title;
     }
