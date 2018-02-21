@@ -77,7 +77,7 @@ public abstract class BaseEntity {
 
 
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP) //It converts the date and time values from Java Object to compatible database type and vice versa.
     @LastModifiedDate
     public Date getUpdatedAt() {
         return updatedAt;

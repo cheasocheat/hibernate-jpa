@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "tb_content")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
+@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true) // related to rest api
 public class Content extends BaseEntity {
     private String title;
     private String titleEn;
