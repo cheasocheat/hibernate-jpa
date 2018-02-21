@@ -23,7 +23,7 @@ public class HibernateDemoApplicationTests {
 		System.out.println("Hibernate Demo");
 	}
 
-	@Test
+	/*@Test
 	public void saveContent(){
 		Content cont = new Content();
 		cont.setStatus(RecordStatus.PUB);
@@ -55,8 +55,8 @@ public class HibernateDemoApplicationTests {
 		cont.setUpdatedUser("Reahoo2");
 		contentService.saveContent2(cont);
 	}
-
-	@Test
+*/
+	/*@Test
 	public void getContentWithCriteria() {
 		contentService.getListOfContents();
 	}
@@ -69,5 +69,5 @@ public class HibernateDemoApplicationTests {
 	@Test
 	public void getContentTransaction3() {
 		contentService.getListOfContents3();
-	}
+	}*/
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form autocomplete="off" action="#" th:action="@{/role}"
+      th:object="${role}" method="post" class="form-horizontal"
+      role="form">
+    <h2>Registration Form</h2>
+    <div class="form-group">
+        <div class="col-sm-9">
+            <label th:if="${#fields.hasErrors('code')}" th:errors="*{code}"
+                   class="validation-message"></label>
+            <input type="text" th:field="*{code}" placeholder="Code"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-9">
+            <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                   class="validation-message"></label>
+            <input type="text" th:field="*{name}" placeholder="Role"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-sm-9">
+            <button type="submit" class="btn btn-primary btn-block">Create</button>
+        </div>
+    </div>
+
+
+
+</form>
+</body>
+</html>
