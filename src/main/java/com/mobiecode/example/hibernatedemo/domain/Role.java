@@ -8,7 +8,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_role")
-@EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 public class Role extends BaseEntity {
     private String code;

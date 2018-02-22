@@ -1,7 +1,8 @@
-package com.mobiecode.example.hibernatedemo.services;
+package com.mobiecode.example.hibernatedemo.services.impl;
 
 import com.mobiecode.example.hibernatedemo.domain.Content;
 import com.mobiecode.example.hibernatedemo.repository.ContentRepository;
+import com.mobiecode.example.hibernatedemo.services.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

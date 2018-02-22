@@ -1,12 +1,19 @@
 package com.mobiecode.example.hibernatedemo.domain;
 
+import com.mobiecode.example.hibernatedemo.utils.RecordStatus;
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
     protected Long id = null;
     private RecordStatus status;
@@ -77,7 +84,7 @@ public abstract class BaseEntity {
 
 
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP) //It converts the date and time values from Java Object to compatible database type and vice versa.
+    @Temporal(TemporalType.TIMESTAMP)//It converts the date and time values from Java Object to compatible database type and vice versa.
     @LastModifiedDate
     public Date getUpdatedAt() {
         return updatedAt;
@@ -86,4 +93,5 @@ public abstract class BaseEntity {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

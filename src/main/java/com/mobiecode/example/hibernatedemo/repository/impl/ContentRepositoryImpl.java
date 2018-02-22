@@ -1,6 +1,7 @@
-package com.mobiecode.example.hibernatedemo.repository;
+package com.mobiecode.example.hibernatedemo.repository.impl;
 
 import com.mobiecode.example.hibernatedemo.domain.Content;
+import com.mobiecode.example.hibernatedemo.repository.ContentRepository;
 import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

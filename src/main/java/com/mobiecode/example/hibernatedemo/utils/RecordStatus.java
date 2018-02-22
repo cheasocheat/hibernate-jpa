@@ -1,4 +1,4 @@
-package com.mobiecode.example.hibernatedemo.domain;
+package com.mobiecode.example.hibernatedemo.utils;
 
 public enum RecordStatus {
     PUB("PUB", "Publish"),

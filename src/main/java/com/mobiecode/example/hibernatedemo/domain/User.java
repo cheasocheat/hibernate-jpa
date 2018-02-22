@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_user")
-@EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 public class User extends BaseEntity{
 
@@ -20,7 +19,6 @@ public class User extends BaseEntity{
     private String email;
     private String username;
     private String password;
-//    private int enabled;
     private Set<Role> roles;
 
     @Override
@@ -70,15 +68,6 @@ public class User extends BaseEntity{
     public void setUsername(String username) {
         this.username = username;
     }
-
-/*    @Column(name = "enabled", columnDefinition = "int default 1" , nullable = false)
-    public int getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(int enabled) {
-        this.enabled = enabled;
-    }*/
 
     @Column(name = "usr_password")
     @Length(min = 5, message = "*Your password must have at least 5 characters")
