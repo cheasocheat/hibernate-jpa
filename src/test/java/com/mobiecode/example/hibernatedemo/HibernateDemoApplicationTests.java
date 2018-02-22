@@ -1,8 +1,8 @@
 package com.mobiecode.example.hibernatedemo;
 
-import com.mobiecode.example.hibernatedemo.domain.Content;
-import com.mobiecode.example.hibernatedemo.domain.RecordStatus;
+import com.mobiecode.example.hibernatedemo.domain.Role;
 import com.mobiecode.example.hibernatedemo.services.ContentService;
+import com.mobiecode.example.hibernatedemo.services.RoleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +18,42 @@ public class HibernateDemoApplicationTests {
 	@Autowired
 	private ContentService contentService;
 
+	@Autowired
+	private RoleService roleService;
+
 	@Test
 	public void contextLoads() {
 		System.out.println("Hibernate Demo");
 	}
+
+	/**
+	 * ROLE CRUD
+	 */
+	@Test
+	public void saveRole(){
+		Role role = new Role();
+		role.setCode("CODE1");
+		role.setName("NAME1");
+		roleService.saveRole(role);
+	}
+
+	@Test
+	public void deleteRole(){
+		roleService.deleteRole(15l);
+	}
+
+	@Test
+	public void updateRole(){
+		Role role = roleService.getRoleById(17l);
+		if(role != null){
+			role.setUpdatedAt(new Date());
+			role.setName("Gaga1");
+		}
+		roleService.updateRole(role);
+	}
+
+
+
 
 	/*@Test
 	public void saveContent(){
